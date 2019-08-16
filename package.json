@@ -1,0 +1,45 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "A simple Boiler plate for any react project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d build",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cammyb1/React-BoilerPlate.git"
+  },
+  "author": "cammyb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cammyb1/React-BoilerPlate/issues"
+  },
+  "homepage": "https://github.com/cammyb1/React-BoilerPlate#readme",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-plugin-transform-object-entries": "^1.0.0",
+    "es6-promise": "^4.2.5",
+    "html-webpack-plugin": "^3.2.0",
+    "requirejs": "^2.2.0",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "babel-register": "^6.26.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
