@@ -1,7 +1,7 @@
-import React from "react"
-import ReactDom from "react-dom"
+import React from "react";
+import ReactDom from "react-dom";
+import Canvas from "./SandBox/canvas";
 
-const container = document.getElementById("main")
-const Root = () => <div>Hola MUNDO</div>
+const container = document.getElementById("main");
 
-ReactDom.render(<Root/>, container)
+ReactDom.render(<Canvas />, container);
