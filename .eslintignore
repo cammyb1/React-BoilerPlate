@@ -1,0 +1,9 @@
+!.*.json
+package.json
+package-lock.json
+/.git
+/lib
+/build
+/dist
+/node_modules
+*coverage*
