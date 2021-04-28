@@ -4,12 +4,13 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const sourcePath = path.join(__dirname, './src')
+const publicPath = path.join(__dirname, './public')
 const buildPath = path.join(__dirname, './build')
 const jsSourcePath = path.join(__dirname, './src/js')
 
 const plugins = [
   new HtmlWebpackPlugin({
-    template: path.join(sourcePath, 'index.html'),
+    template: path.join(publicPath, 'index.html'),
     path: buildPath,
     filename: 'index.html',
   }),
