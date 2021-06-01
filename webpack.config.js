@@ -1,20 +1,11 @@
-const webpack = require('webpack')
-const path = require('path')
+const webpack = require('webpack');
+const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const sourcePath = path.join(__dirname, './src')
-const buildPath = path.join(__dirname, './build')
-const jsSourcePath = path.join(__dirname, './src/js')
-
-const plugins = [
-  new HtmlWebpackPlugin({
-    template: path.join(sourcePath, 'index.html'),
-    path: buildPath,
-    filename: 'index.html',
-  }),
-  new webpack.HotModuleReplacementPlugin()
-]
+const sourcePath = path.join(__dirname, './src');
+const buildPath = path.join(__dirname, './build');
+const jsSourcePath = path.join(__dirname, './src/js');
 
 module.exports = {
   context: path.join(__dirname, './src'),
@@ -22,17 +13,11 @@ module.exports = {
   output: {
     filename: '[name].js',
     publicPath: '/',
-    path: buildPath
+    path: buildPath,
   },
   resolve: {
-    extensions: [
-     '.js',
-     '.jsx'
-   ],
-   modules:[
-     path.resolve(__dirname, 'node_modules'),
-     jsSourcePath
-   ]
+    extensions: ['.js', '.jsx'],
+    modules: [path.resolve(__dirname, 'node_modules'), jsSourcePath],
   },
   module: {
     rules: [
@@ -40,19 +25,26 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
-  mode: "development",
-  devtool: "source-map",
+  mode: 'development',
+  devtool: 'source-map',
   watch: true,
-  plugins,
-  devServer : {
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(sourcePath, 'index.html'),
+      path: buildPath,
+      filename: 'index.html',
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  devServer: {
     contentBase: sourcePath,
     compress: true,
     historyApiFallback: true,
@@ -76,5 +68,5 @@ module.exports = {
         green: '\u001b[32m',
       },
     },
-  }
+  },
 };
